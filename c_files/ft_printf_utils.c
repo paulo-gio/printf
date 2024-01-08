@@ -26,7 +26,7 @@ int	ft_putstr(char *str)
 }
 
 // Converts an integer to a string, prints the
-// string to the console, and returns len
+// string to the console and returns len
 
 int	ft_putnumb(int n)
 {

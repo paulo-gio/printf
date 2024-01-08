@@ -40,7 +40,7 @@ char	*ft_utoa(unsigned int n)
 // Prints an unsigned integer to the console
 // and returns the number of characters printed
 
-int	ft_putunsigned(unsigned int n)
+int	ft_putuns(unsigned int n)
 {
 	char	*num;
 	int		len;

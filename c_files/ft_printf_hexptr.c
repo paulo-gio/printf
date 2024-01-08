@@ -29,7 +29,7 @@ static void	ft_num_to_hex(unsigned int num, const char type, char *hex)
 
 // Prints the hex string
 
-int	ft_puthexadecimal(unsigned int num, const char type)
+int	ft_puthex(unsigned int num, const char type)
 {
 	char	hex[9];
 	int		len;
@@ -73,7 +73,7 @@ static int	ft_put_hex_iter(unsigned long long prt)
 
 // Prints the hex representation of a pointer to stdout
 
-int	ft_putpointer(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	unsigned long long	prt;
 	int					len;
