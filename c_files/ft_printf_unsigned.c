@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgiovann <pgiovann@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/08 14:24:26 by pgiovann          #+#    #+#             */
+/*   Updated: 2024/01/08 17:51:36 by pgiovann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
 // Returns the number of digits required to represent an unsigned integer
 
-int	ft_length_num(unsigned int num)
+static int	ft_length_num(unsigned int num)
 {
 	int	len;
 
@@ -19,7 +31,7 @@ int	ft_length_num(unsigned int num)
 
 // Converts an unsigned integer to a string
 
-char	*ft_utoa(unsigned int n)
+static char	*ft_utoa(unsigned int n)
 {
 	int		len;
 	char	*num;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_hexptr.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pgiovann <pgiovann@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/08 14:24:19 by pgiovann          #+#    #+#             */
+/*   Updated: 2024/01/08 15:01:52 by pgiovann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
 // Converts unsigned integer to hexadecimal string,
@@ -81,7 +93,7 @@ int	ft_putptr(void *ptr)
 	prt = (unsigned long long)ptr;
 	if (!ptr)
 	{
-		len = write(1, "0x0", 3);
+		len = write(1, "(nil)", 5);
 		return (len);
 	}
 	len = write(1, "0x", 2);
