@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hexptr.c                                 :+:      :+:    :+:   */
@@ -6,11 +6,11 @@
 /*   By: pgiovann <pgiovann@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:24:19 by pgiovann          #+#    #+#             */
-/*   Updated: 2024/01/08 15:01:52 by pgiovann         ###   ########.fr       */
+/*   Updated: 2024/01/09 01:35:27 by pgiovann         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
-#include "../ft_printf.h"
+#include "../includes/ft_printf.h"
 
 // Converts unsigned integer to hexadecimal string,
 
@@ -55,7 +55,7 @@ int	ft_puthex(unsigned int num, const char type)
 
 // Prints hexadecimal digits iteratively
 
-static int	ft_put_hex_iter(unsigned long long prt)
+static int	ft_put_hex_iter(unsigned long long addr)
 {
 	int					i;
 	int					len;
@@ -63,19 +63,19 @@ static int	ft_put_hex_iter(unsigned long long prt)
 	char				hex[16];
 
 	i = 0;
-	if (prt == 0)
+	if (addr == 0)
 	{
 		ft_putchar('0');
 		return (1);
 	}
-	while (prt != 0)
+	while (addr != 0)
 	{
-		digit = prt % 16;
+		digit = addr % 16;
 		if (digit < 10)
 			hex[i++] = digit + '0';
 		else
 			hex[i++] = digit - 10 + 'a';
-		prt /= 16;
+		addr /= 16;
 	}
 	len = i;
 	while (i > 0)
@@ -87,16 +87,16 @@ static int	ft_put_hex_iter(unsigned long long prt)
 
 int	ft_putptr(void *ptr)
 {
-	unsigned long long	prt;
+	unsigned long long	addr;
 	int					len;
 
-	prt = (unsigned long long)ptr;
+	addr = (unsigned long long)ptr;
 	if (!ptr)
 	{
 		len = write(1, "(nil)", 5);
 		return (len);
 	}
 	len = write(1, "0x", 2);
-	len += ft_put_hex_iter(prt);
+	len += ft_put_hex_iter(addr);
 	return (len);
 }

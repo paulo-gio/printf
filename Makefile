@@ -1,4 +1,4 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,15 +6,15 @@
 #    By: pgiovann <pgiovann@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 14:25:11 by pgiovann          #+#    #+#              #
-#    Updated: 2024/01/08 14:25:19 by pgiovann         ###   ########.fr        #
+#    Updated: 2024/01/09 01:46:16 by pgiovann         ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
 NAME		= libftprintf.a
 LIBFT		= ./libft/libft.a
 LIBFTDIR	= ./libft
-SRC			= ./c_files
-PRINTF_SRCS	= ft_printf.c ft_printf_hexptr.c ft_printf_unsigned.c ft_printf_utils.c
+SRC			= ./source
+PRINTF_SRCS	= ft_printf.c ft_printf_hexptr.c ft_printf_uns.c ft_printf_utils.c
 OBJS		= $(PRINTF_SRCS:%.c=%.o)
 
 CC			= cc
